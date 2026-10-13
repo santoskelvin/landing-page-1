@@ -1,0 +1,69 @@
+/* === Seção 15 — FAQ === */
+
+.faq__intro {
+  margin-bottom: var(--space-8);
+}
+
+.faq__accordion {
+  max-width: 760px;
+}
+
+@media (min-width: 1024px) {
+  .faq__intro {
+    max-width: 720px;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .faq__accordion {
+    margin-inline: auto;
+  }
+}
+
+.accordion__item {
+  border-bottom: 1px solid var(--border);
+}
+
+.accordion__item:first-of-type {
+  border-top: 1px solid var(--border);
+}
+
+.accordion__trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  width: 100%;
+  padding: var(--space-5) 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--foreground);
+  cursor: pointer;
+  list-style: none;
+  background: transparent;
+  border: none;
+}
+
+.accordion__trigger::-webkit-details-marker {
+  display: none;
+}
+
+.accordion__chevron {
+  flex-shrink: 0;
+  transition: transform var(--duration-fast) var(--ease-out);
+  color: var(--muted-foreground);
+}
+
+details[open] .accordion__chevron {
+  transform: rotate(180deg);
+}
+
+.accordion__content {
+  padding-bottom: var(--space-5);
+}
+
+.accordion__content p {
+  font-size: 0.9375rem;
+  color: var(--muted-foreground);
+  line-height: 1.6;
+}

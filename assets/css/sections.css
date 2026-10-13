@@ -1,0 +1,19 @@
+/* sections.css — hub de @imports por seção */
+
+@import url('sections/00-header.css');
+@import url('sections/01-hero.css');
+@import url('sections/02-problema.css');
+@import url('sections/03-inteligencia.css');
+@import url('sections/04-como-funciona.css');
+@import url('sections/05-demonstracao.css');
+@import url('sections/07-funcionalidades.css');
+@import url('sections/08-painel.css');
+@import url('sections/09-rotina.css');
+@import url('sections/10-decisoes.css');
+@import url('sections/11-plataforma.css');
+@import url('sections/12-seguranca.css');
+@import url('sections/13-planos.css');
+@import url('sections/14-prova.css');
+@import url('sections/15-faq.css');
+@import url('sections/16-comecar.css');
+@import url('sections/17-footer.css');

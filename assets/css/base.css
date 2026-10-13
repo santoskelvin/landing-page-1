@@ -1,0 +1,398 @@
+/* ── Reset leve ── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img,
+video,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+/* ── HTML / Body ── */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-height);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* ── Tipografia global ── */
+h1 {
+  font-size: var(--text-h1);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  font-family: var(--font-heading);
+}
+
+h2 {
+  font-size: var(--text-h2);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  font-family: var(--font-heading);
+}
+
+h3 {
+  font-size: var(--text-h3);
+  font-weight: 600;
+  line-height: 1.3;
+  font-family: var(--font-heading);
+}
+
+p {
+  line-height: 1.6;
+}
+
+p.prose {
+  max-width: 65ch;
+}
+
+.text-muted {
+  color: var(--muted-foreground);
+}
+
+.eyebrow {
+  font-size: var(--text-eyebrow);
+  font-weight: 500;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.tabularums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Container ── */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--space-5);
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-inline: var(--space-8);
+  }
+}
+
+/* ── Section base ── */
+.section {
+  padding-block: var(--section-space);
+  scroll-margin-top: var(--header-height);
+}
+
+.section--alt {
+  /* Fade from body bg (carvão) into indigo and back — elimina o corte seco entre seções */
+  background: linear-gradient(
+    180deg,
+    var(--faro-carvao) 0,
+    var(--faro-indigo) var(--section-space),
+    var(--faro-indigo) calc(100% - var(--section-space)),
+    var(--faro-carvao) 100%
+  );
+}
+
+.section--glow {
+  background-color: var(--faro-carvao);
+  position: relative;
+  overflow: hidden;
+}
+
+.section--glow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 70% 50% at 50% 0%,
+    color-mix(in srgb, var(--faro-violeta) 10%, transparent),
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+/* ── Accent line sob H2 de seção ── */
+.section h2 {
+  position: relative;
+  padding-bottom: var(--space-4);
+}
+
+.section h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3rem;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--faro-violeta),
+    transparent
+  );
+}
+
+/* Para h2 alinhados à esquerda (seções com intro à esquerda) */
+.section h2[style*="left"],
+.section__intro h2 {
+  padding-bottom: var(--space-4);
+}
+
+/* ── Utilitários próprios ── */
+.u-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.u-cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.u-center {
+  display: grid;
+  place-items: center;
+}
+
+.u-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ── Skip link ── */
+.skip-link {
+  position: absolute;
+  top: var(--space-2);
+  left: var(--space-2);
+  z-index: 9999;
+  padding: var(--space-2) var(--space-4);
+  background: var(--primary);
+  color: var(--primary-foreground);
+  border-radius: var(--radius);
+  font-weight: 600;
+  text-decoration: none;
+  transform: translateY(-200%);
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.skip-link:focus-visible {
+  transform: translateY(0);
+}
+
+/* ── Placeholder (TODO / conteúdo pendente) ── */
+.placeholder {
+  display: block;
+  border: 2px dashed color-mix(in srgb, var(--faro-cinza) 50%, transparent);
+  color: var(--muted-foreground);
+  padding: var(--space-3) var(--space-4);
+  border-radius: calc(var(--radius) / 2);
+  font-size: var(--text-small);
+  font-style: italic;
+}
+
+/* ── Image placeholder (aguardando imagem real) ── */
+.img-placeholder {
+  position: relative;
+  border-radius: var(--radius);
+  border: 1px dashed color-mix(in srgb, var(--faro-violeta) 35%, transparent);
+  background: color-mix(in srgb, var(--faro-violeta) 4%, var(--card));
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.img-placeholder::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(color-mix(in srgb, var(--faro-violeta) 7%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--faro-violeta) 7%, transparent) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+}
+
+.img-placeholder__label {
+  position: relative;
+  z-index: 1;
+  font-size: var(--text-small);
+  color: var(--muted-foreground);
+  font-style: italic;
+  text-align: center;
+  padding: var(--space-6);
+  letter-spacing: 0.02em;
+}
+
+/* ── Badge — override do Basecoat CDN ── */
+.badge {
+  padding-inline: var(--space-3);
+  padding-block: var(--space-1);
+}
+
+/* ── Keyframe para transição de tab panels ── */
+@keyframes tab-fade-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* ── Segment control (tablist padrão da página) ── */
+.page-tablist {
+  display: flex;
+  background: color-mix(in srgb, var(--card) 90%, var(--background));
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 4px;
+  gap: 2px;
+  width: fit-content;
+  max-width: 100%;
+  overflow-x: auto;
+  scrollbar-width: none;
+  margin-inline: auto;
+  margin-bottom: var(--space-8);
+}
+
+.page-tablist::-webkit-scrollbar {
+  display: none;
+}
+
+.page-tablist [role="tab"] {
+  padding: 6px var(--space-5);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--muted-foreground);
+  background: transparent;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    color var(--duration-fast) var(--ease-out),
+    background var(--duration-fast) var(--ease-out),
+    box-shadow var(--duration-fast) var(--ease-out);
+}
+
+.page-tablist [role="tab"]:hover {
+  color: var(--foreground);
+}
+
+.page-tablist [role="tab"][aria-selected="true"] {
+  color: var(--foreground);
+  background: var(--background);
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.35),
+    0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+/* ── Botões — override do Basecoat CDN ── */
+.btn {
+  padding-inline: var(--space-4);
+  padding-block: var(--space-2);
+  height: auto;
+  min-height: 2.25rem;
+  white-space: nowrap;
+}
+
+.btn[data-size="lg"] {
+  padding-inline: var(--space-6);
+  padding-block: var(--space-3);
+  font-size: 1rem;
+}
+
+.btn[data-size="sm"] {
+  padding-inline: var(--space-3);
+  padding-block: var(--space-1);
+}
+
+.btn[data-size="icon"] {
+  padding: var(--space-2);
+}
+
+/* ── Foco visível global ── */
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 3px;
+  border-radius: calc(var(--radius) / 2);
+}
+
+/* ── Animação de reveal ── */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 500ms var(--ease-out) var(--reveal-delay, 0ms),
+    transform 500ms var(--ease-out) var(--reveal-delay, 0ms);
+}
+
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Card hover glow ── */
+.card {
+  transition:
+    border-color var(--duration-base) var(--ease-out),
+    box-shadow var(--duration-base) var(--ease-out);
+}
+
+.card:hover {
+  border-color: color-mix(in srgb, var(--faro-violeta) 40%, transparent);
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--faro-violeta) 14%, transparent),
+    0 12px 32px rgba(0, 0, 0, 0.45);
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

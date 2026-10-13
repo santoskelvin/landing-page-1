@@ -1,0 +1,73 @@
+/* === Seção 2 — Dor + solução === */
+
+.problema__intro {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  margin-bottom: var(--space-12);
+  align-items: flex-start;
+}
+
+@media (min-width: 1024px) {
+  .problema__intro {
+    max-width: 720px;
+    margin-inline: auto;
+    text-align: center;
+    align-items: center;
+  }
+}
+
+.problema__cards {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .problema__cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.demo-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35),
+              inset 0 1px 0 color-mix(in srgb, var(--faro-branco) 6%, transparent);
+}
+
+.demo-card__num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--primary);
+  font-size: 0.875rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.demo-card__title {
+  font-size: var(--text-h3);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.demo-card__text {
+  font-size: 0.9375rem;
+  color: var(--muted-foreground);
+  line-height: 1.6;
+}
+
+.problema__aviso {
+  font-size: var(--text-small);
+  margin-top: var(--space-6);
+}

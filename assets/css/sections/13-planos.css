@@ -1,0 +1,72 @@
+/* === Seção 13 — Oferta e preço === */
+
+.planos__intro {
+  max-width: 560px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  text-align: center;
+  margin-bottom: var(--space-10);
+}
+
+.planos__card-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.planos__card {
+  width: 100%;
+  max-width: 420px;
+  padding: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.planos__card-header {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.planos__features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding-block: var(--space-5);
+}
+
+.planos__feature {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  font-size: 0.9375rem;
+  color: var(--muted-foreground);
+}
+
+.planos__feature svg {
+  color: var(--primary);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.planos__feature--placeholder {
+  padding-top: var(--space-2);
+}
+
+.planos__preco {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.planos__condicoes {
+  font-size: var(--text-small);
+  color: var(--muted-foreground);
+  text-align: center;
+}

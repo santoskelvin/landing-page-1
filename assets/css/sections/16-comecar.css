@@ -1,0 +1,16 @@
+/* === Seção 16 — CTA final === */
+
+.comecar__content {
+  max-width: 560px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-5);
+  text-align: center;
+}
+
+.comecar__microcopy {
+  font-size: var(--text-small);
+  margin-top: calc(var(--space-2) * -1);
+}

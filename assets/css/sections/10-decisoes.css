@@ -1,0 +1,116 @@
+/* === Seção 10 — Decisões melhores === */
+
+.decisoes__intro {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin-bottom: var(--space-12);
+}
+
+@media (min-width: 1024px) {
+  .decisoes__intro {
+    max-width: 720px;
+    margin-inline: auto;
+    text-align: center;
+    align-items: center;
+  }
+}
+
+/* Fluxo 3 etapas */
+.step-flow {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  align-items: flex-start;
+}
+
+@media (min-width: 768px) {
+  .step-flow {
+    flex-direction: row;
+    align-items: stretch;
+    gap: var(--space-3);
+  }
+}
+
+.step-flow__item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  flex: 1;
+}
+
+.step-flow__num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 0.875rem;
+  flex-shrink: 0;
+}
+
+.step-flow__card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  flex: 1;
+}
+
+.step-flow__label {
+  display: block;
+  font-size: var(--text-eyebrow);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: var(--space-1);
+}
+
+.step-flow__dados {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.step-dado {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.step-dado__label {
+  font-size: var(--text-small);
+  color: var(--muted-foreground);
+}
+
+.step-dado__value {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* Connector arrow between steps */
+.step-flow__connector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted-foreground);
+  padding: var(--space-2) 0;
+  flex-shrink: 0;
+  transform: rotate(90deg);
+}
+
+@media (min-width: 768px) {
+  .step-flow__connector {
+    transform: rotate(0deg);
+    padding: 0;
+    padding-top: 3rem;
+  }
+}

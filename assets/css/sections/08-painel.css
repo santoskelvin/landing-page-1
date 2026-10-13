@@ -1,0 +1,144 @@
+/* === Seção 8 — Painel de controle web === */
+
+.painel__intro {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin-bottom: var(--space-12);
+}
+
+@media (min-width: 1024px) {
+  .painel__intro {
+    max-width: 720px;
+    margin-inline: auto;
+    text-align: center;
+    align-items: center;
+  }
+}
+
+/* Moldura de browser */
+.painel__browser {
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.browser-frame {
+  background: color-mix(in srgb, var(--faro-indigo) 80%, var(--faro-carvao));
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.browser-frame__bar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--border);
+  background: color-mix(in srgb, var(--faro-indigo) 90%, var(--faro-carvao));
+}
+
+.browser-frame__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--border);
+  flex-shrink: 0;
+}
+
+.browser-frame__url {
+  font-size: 0.75rem;
+  color: var(--muted-foreground);
+  background: color-mix(in srgb, var(--faro-cinza) 12%, transparent);
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius) / 2);
+  padding: var(--space-1) var(--space-3);
+  margin-left: var(--space-2);
+}
+
+.browser-frame__content {
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+/* Cards de resumo */
+.painel-mockup__cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3);
+}
+
+@media (min-width: 640px) {
+  .painel-mockup__cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.painel-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius) / 1.2);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.painel-card__label {
+  font-size: 0.75rem;
+  color: var(--muted-foreground);
+}
+
+.painel-card__value {
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.painel-card__value--destaque {
+  color: var(--primary);
+}
+
+/* Gráfico de barras SVG */
+.painel-mockup__chart-section,
+.painel-mockup__cats,
+.painel-mockup__moves {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius) / 1.2);
+  padding: var(--space-4);
+}
+
+.painel-mockup__chart-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--muted-foreground);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-3);
+}
+
+.painel-mockup__bar-chart {
+  width: 100%;
+  height: auto;
+  max-width: 360px;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .browser-frame__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: var(--space-4);
+  }
+
+  .painel-mockup__cards {
+    grid-column: 1 / -1;
+  }
+
+  .painel-mockup__moves {
+    grid-column: 1 / -1;
+  }
+}

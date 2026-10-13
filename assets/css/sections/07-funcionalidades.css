@@ -1,0 +1,129 @@
+/* === Seção 7 — Inteligência financeira === */
+
+.funcionalidades__intro {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin-bottom: var(--space-10);
+}
+
+@media (min-width: 1024px) {
+  .funcionalidades__intro {
+    max-width: 720px;
+    margin-inline: auto;
+    text-align: center;
+    align-items: center;
+  }
+}
+
+/* Tablist → usa .page-tablist de base.css */
+
+.funcionalidades__panel {
+  min-height: 200px;
+}
+
+.funcionalidades__panel:not([hidden]) {
+  animation: tab-fade-in 0.25s var(--ease-out) both;
+}
+
+/* Insight panel layout */
+.insight-panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+@media (min-width: 768px) {
+  .insight-panel {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--space-12);
+  }
+
+  .insight-panel__text {
+    flex: 1;
+  }
+
+  .insight-panel__dado {
+    flex-shrink: 0;
+    min-width: 260px;
+  }
+}
+
+.insight-panel__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.insight-panel__text h3 {
+  font-size: var(--text-h3);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.insight-dado {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.insight-dado__chart {
+  padding: var(--space-4) var(--space-5) var(--space-3);
+  border-bottom: 1px solid var(--border);
+  background: color-mix(in srgb, var(--background) 40%, var(--card));
+}
+
+.insight-dado__body {
+  padding: var(--space-4) var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.insight-dado--destaque {
+  border-color: color-mix(in srgb, var(--primary) 40%, transparent);
+}
+
+.insight-dado--destaque .insight-dado__chart {
+  background: color-mix(in srgb, var(--accent) 80%, var(--card));
+}
+
+.insight-dado__label {
+  font-size: var(--text-small);
+  color: var(--muted-foreground);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.insight-dado__value {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--foreground);
+}
+
+.insight-dado--destaque .insight-dado__body .insight-dado__value {
+  color: var(--primary);
+}
+
+.insight-dado__sub {
+  font-size: var(--text-small);
+  color: var(--muted-foreground);
+}
+
+/* SVG chart inside insight-dado__chart */
+.insight-chart-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.funcionalidades__cta {
+  margin-top: var(--space-8);
+  display: flex;
+  justify-content: center;
+}

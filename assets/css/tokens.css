@@ -1,0 +1,84 @@
+:root,
+.dark {
+  /* ── Paleta da marca ── */
+  --faro-carvao: #0C091E;
+  --faro-indigo: #1C1850;
+  --faro-violeta: #8B72FF;
+  --faro-branco: #EAE5FF;
+  --faro-cinza: #7876B2;
+
+  /* ── Tokens Basecoat / shadcn ── */
+  --background: var(--faro-carvao);
+  --foreground: var(--faro-branco);
+
+  --card: color-mix(in srgb, var(--faro-branco) 8%, var(--faro-indigo));
+  --card-foreground: var(--faro-branco);
+  --popover: var(--faro-indigo);
+  --popover-foreground: var(--faro-branco);
+
+  --primary: var(--faro-violeta);
+  --primary-foreground: var(--faro-carvao);
+
+  --secondary: var(--faro-indigo);
+  --secondary-foreground: var(--faro-branco);
+
+  --muted: var(--faro-indigo);
+  --muted-foreground: var(--faro-cinza);
+
+  --accent: color-mix(in srgb, var(--faro-violeta) 14%, var(--faro-carvao));
+  --accent-foreground: var(--faro-branco);
+
+  --border: color-mix(in srgb, var(--faro-cinza) 28%, transparent);
+  --input: color-mix(in srgb, var(--faro-cinza) 28%, transparent);
+  --ring: var(--faro-violeta);
+
+  --radius: 0.75rem;
+
+  /* ── Gráficos ── */
+  --chart-1: var(--faro-violeta);
+  --chart-2: color-mix(in srgb, var(--faro-violeta) 65%, var(--faro-branco));
+  --chart-3: color-mix(in srgb, var(--faro-violeta) 55%, var(--faro-indigo));
+  --chart-4: var(--faro-cinza);
+  --chart-5: color-mix(in srgb, var(--faro-cinza) 50%, var(--faro-indigo));
+
+  /* ── Tipografia ── */
+  --font-sans: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+
+  /* ── Escala tipográfica fluida ── */
+  --text-h1: clamp(2.5rem, 6vw, 4.5rem);
+  --text-h2: clamp(1.875rem, 4vw, 3rem);
+  --text-h3: 1.25rem;
+  --text-body: clamp(1rem, 1.5vw, 1.125rem);
+  --text-small: 0.875rem;
+  --text-eyebrow: 0.875rem;
+
+  /* ── Layout ── */
+  --container-max: 1200px;
+  --section-space: clamp(4rem, 10vw, 8rem);
+  --header-height: 4rem;
+
+  /* ── Escala de espaçamento (múltiplos de 4px) ── */
+  --space-1:  0.25rem;   /* 4px  */
+  --space-2:  0.5rem;    /* 8px  */
+  --space-3:  0.75rem;   /* 12px */
+  --space-4:  1rem;      /* 16px */
+  --space-5:  1.25rem;   /* 20px */
+  --space-6:  1.5rem;    /* 24px */
+  --space-7:  1.75rem;   /* 28px */
+  --space-8:  2rem;      /* 32px */
+  --space-9:  2.25rem;   /* 36px */
+  --space-10: 2.5rem;    /* 40px */
+  --space-11: 2.75rem;   /* 44px */
+  --space-12: 3rem;      /* 48px */
+  --space-13: 3.25rem;   /* 52px */
+  --space-14: 3.5rem;    /* 56px */
+  --space-15: 3.75rem;   /* 60px */
+  --space-16: 4rem;      /* 64px */
+
+  /* ── Animações ── */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast: 150ms;
+  --duration-base: 300ms;
+  --duration-slow: 600ms;
+}

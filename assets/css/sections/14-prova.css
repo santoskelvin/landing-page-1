@@ -1,0 +1,39 @@
+/* === Seção 14 — Prova social === */
+
+.prova__intro {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin-bottom: var(--space-10);
+}
+
+@media (min-width: 1024px) {
+  .prova__intro {
+    max-width: 720px;
+    margin-inline: auto;
+    text-align: center;
+    align-items: center;
+  }
+}
+
+.prova__blocos {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .prova__blocos {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.prova__bloco {
+  min-height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-8);
+  font-size: 0.9375rem;
+}
